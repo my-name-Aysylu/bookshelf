@@ -1,23 +1,27 @@
 const books = [
     {
+      id: 1,
       title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
       authors: 'Erich Gamma, John Vlissides, Ralph Johnson, Richard Helm',
       year: '1994',
       image: '<img src="https://images-na.ssl-images-amazon.com/images/I/81gtKoapHFL.jpg"/>'
     },
     {
+      id: 2,
       title: 'JavaScript: The Good Parts',
       authors: 'Douglas Crockford',
       year: '2008',
       image: '<img src="https://images-na.ssl-images-amazon.com/images/I/81kqrwS1nNL.jpg"/>'
     },
     {
+      id: 3,
       title: 'JavaScript Patterns: Build Better Applications with Coding and Design Patterns',
       authors: 'Stoyan Stefanov',
       year: 2008,
       image: '<img src="https://images-na.ssl-images-amazon.com/images/I/51%2BSiphz7AL._SX377_BO1,204,203,200_.jpg"/>'
     },
     {
+      id: 4,
       title: 'JavaScript: The Definitive Guide: Activate Your Web Pages (Definitive Guides)',
       authors: 'David Flanagan',
       year: 2011,
@@ -26,7 +30,8 @@ const books = [
 ]
 
 const container = document.getElementById("container")
-
+function renderBooks() {
+container.innerHTML = ""
 books.forEach(function(book) {
     container.innerHTML += `
     <div class="books">
@@ -39,11 +44,56 @@ books.forEach(function(book) {
     </div>
     </div>
     <div class="shelf">
-    <div class="to-change"><button>Изменить</button></div>
-    <div class="delet"><button>Удалить</button></div>
+    <button onclick=''>Изменить</button>
+    <button onclick='deletBook(${book.id})'>Удалить</button>
     </div>
     </div>`
 })
+}
 
-	
-			
+
+
+function clearForm () {
+  document.getElementById('title').value = ""
+  document.getElementById('author').value = ""
+  document.getElementById('publication').value =""
+  document.getElementById('images').value = ""
+}
+
+function deletBook(id){
+   //шаг 1 найти книгу
+   const book = books.find((s) => {
+    return s.id === id
+   })
+   //шаг 2 узнать индекс книги в массиве
+   const bookIndex = books.indexOf(book)
+
+   // 3 удалить элемент из массива
+   books.splice((bookIndex), 1)
+   // 4 перерисовать список
+   renderBooks()
+
+}
+
+
+function addBook() {
+  const titleValue = document.getElementById('title').value
+  const authorValue = document.getElementById('author').value
+  const publicationValue = document.getElementById('publication').value
+  const imagesValue = document.getElementById('images').value
+
+  const book = {
+    title: titleValue,
+    authors: authorValue,
+    year: publicationValue,
+    image: imagesValue
+  }
+
+  books.push(book)
+  renderBooks()
+  clearForm ()
+}
+
+
+
+renderBooks()

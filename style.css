@@ -13,6 +13,51 @@ body {
     min-height: 100vh;
   }
 
+  .getMenu {
+    margin: 0% auto;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+  .text {
+    font-size: 22px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    
+  }
+
+  #buttonbook {
+    font-size: 32px;
+    font-weight: 600;
+    color: blue;
+    width: 100%;
+    justify-content: right;
+    padding-right: 25px;
+  }
+
+  #addBookMenu {
+    display: flex;
+    flex-direction: column;
+    display: none;
+  }
+
+  input {
+    border-radius: 10px;
+    height: 50px;
+    width: 500px;  
+  }
+
+  #save {
+    font-size: 24px;
+    font-weight: 600;
+    color: blueviolet;
+    text-align: left;
+   
+  }
+
    .menu-books {
     margin: 0% auto;
     max-width: 1280px;
@@ -151,6 +196,7 @@ body {
     --tw-divide-x-reverse: 0;
     border-right-width: calc(1px * var(--tw-divide-x-reverse));
     border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+    cursor: pointer;
     
   }
 

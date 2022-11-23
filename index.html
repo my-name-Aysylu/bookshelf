@@ -16,7 +16,32 @@
 	</style>
 </head>
 <body>
+	
 	<div class="menu">
+		<div class="getMenu">
+			<div>
+			<button id="buttonbook" onclick="(document.getElementById('addBookMenu').style.display='block')">Добавить книгу</button>
+		</div>
+			<div id="addBookMenu">
+				<div>
+			<p class="text">Название книги</p>
+			<input id="title"/>
+		</div>
+		<div>
+			<p class="text">Автор книги</p>
+			<input id="author"/>
+		</div>
+		<div>
+			<p class="text">Год издания книги</p>
+			<input id="publication"/>
+		</div>
+		<div>
+			<p class="text">Ссылка на изображение</p>
+			<input id="images"/>
+		</div>
+		<button id="save" onclick="addBook(document.getElementById('addBookMenu').style.display='none')">Сохранить</button>
+	</div>
+</div>
 		<div class="menu-books">
 		<div class="bookshelf">Книжная полка</div>
 		<div id="container"></div>
