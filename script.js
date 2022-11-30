@@ -1,4 +1,19 @@
-const books = [
+const getMenu = document.getElementById('getMenu')
+const closeSave = document.getElementById('save')
+const openButtonBook = document.getElementById('buttonbook')
+
+function closeModal() {
+  getMenu.style.display = 'none'
+}
+
+function openModal() {
+ getMenu.style.display = 'flex'
+}
+
+closeSave.addEventListener('click', closeModal)
+openButtonBook.addEventListener('click',openModal)
+
+let books = [
     {
       id: 1,
       title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
@@ -29,6 +44,8 @@ const books = [
     }
 ]
 
+
+
 const container = document.getElementById("container")
 function renderBooks() {
 container.innerHTML = ""
@@ -44,8 +61,8 @@ books.forEach(function(book) {
     </div>
     </div>
     <div class="shelf">
-    <button onclick=''>Изменить</button>
-    <button onclick='deletBook(${book.id})'>Удалить</button>
+    <button onclick=''class="book-btn">Изменить</button>
+    <button onclick='deletBook (${book.id})' class="book-btn">Удалить</button>
     </div>
     </div>`
 })
@@ -73,6 +90,10 @@ function deletBook(id){
    // 4 перерисовать список
    renderBooks()
 
+   const booksJson = JSON.stringify(books)
+   localStorage.setItem('books', booksJson)
+
+
 }
 
 
@@ -92,8 +113,24 @@ function addBook() {
   books.push(book)
   renderBooks()
   clearForm ()
+  closeModal()
+
+  const booksJson = JSON.stringify(books)
+  localStorage.setItem('books', booksJson)
+  
 }
 
 
+const booksJson = localStorage.getItem('books')
+const savedBooks = JSON.parse(booksJson)
+if (booksJson) {
+  books = savedBooks
+}
+
 
 renderBooks()
+
+
+
+
+

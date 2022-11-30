@@ -9,6 +9,7 @@ body {
   }
 
   .menu {
+    
     background-color: whitesmoke;
     min-height: 100vh;
   }
@@ -16,46 +17,107 @@ body {
   .getMenu {
     margin: 0% auto;
     max-width: 1280px;
-    display: flex;
+    display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.199);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     
-    
+
+  }
+
+  .getMenu-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 800px;
+  }
+
+  .new-book {
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 32px;
   }
 
   .text {
-    font-size: 22px;
+    font-size: 18px;
     margin-bottom: 5px;
     margin-top: 15px;
-    
+    color: rgb(85, 84, 84);
   }
 
   #buttonbook {
-    font-size: 32px;
+    font-size: 18px;
     font-weight: 600;
-    color: blue;
-    width: 100%;
-    justify-content: right;
-    padding-right: 25px;
+    line-height: 28px;
+    width: 200px;
+    justify-content: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: white;
+    background-color: rgba(13,148,136);
+    border-radius: 10px;
+    text-align: center;
   }
+
+  #buttonbook:hover {
+    background: rgb(6, 119, 110);
+  }
+
+ 
 
   #addBookMenu {
     display: flex;
     flex-direction: column;
-    display: none;
   }
 
   input {
     border-radius: 10px;
-    height: 50px;
-    width: 500px;  
+    height: 40px; 
+    display: block;
+    width: 100%;
+    border: 1px solid  rgba(153, 153, 153, 0.952);;
+    padding: 8px 16px;
+    outline-color: rgb(81, 49, 196);
+  }
+
+  #publication {
+    width: 270px;
+  }
+
+  #images {
+    width: 450px;
+  }
+
+   
+  .publication-images {
+    display: flex;
+    padding-bottom: 10px;
+    gap: 20px;
+    justify-content: space-between;
+    
   }
 
   #save {
-    font-size: 24px;
-    font-weight: 600;
-    color: blueviolet;
-    text-align: left;
-   
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(13,148,136);
+    text-align: left; 
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  #save:hover {
+    background: rgb(6, 119, 110);
   }
 
    .menu-books {
@@ -70,9 +132,13 @@ body {
     font-size: 60px;
     line-height: 1;
     font-weight: 900;
+  }
+
+  .bookshelf-buttonbook {
+    display: flex;
     margin-top: 100px;
     margin-bottom: 50px;
-    
+    justify-content: space-between;
   }
 
   #container {
@@ -90,22 +156,26 @@ body {
     font-size: .875rem;
     line-height: 1.25rem;
     margin-top: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   @media (max-width: 1024px) {
-    #container { grid-template-columns: repeat(4,minmax(0,1fr));
-         }
+    #container {grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
   }
 
   @media (max-width: 768px) {
-    #container { grid-template-columns: repeat(3,minmax(0,1fr));
+    #container { grid-template-columns: repeat(2,1fr);
          }
     }
 
     @media (max-width: 640px) {
-      #container { grid-template-columns: repeat(2, 0,1fr);
+      #container { grid-template-columns: repeat(1, 1fr);
            }
       }
+
+      
   
   .books { 
      display: flex;
@@ -113,10 +183,11 @@ body {
      justify-content: space-around;
      background-color: white;
      border-radius: 8px;
+     border-color: rgb(231, 231, 231);
      font-size: .875rem;
      flex: 1 1 0%;
-     --tw-shadow: 0 1px 3px 0rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
-     box-shadow: var(--tw-ring-offset-shadow,0 0 rgba(206, 202, 202, 0)),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5)
+     
   }
 
   .shelf-menu {
@@ -131,7 +202,14 @@ body {
     width: 10rem;
     height: 11rem;
     align-items: center;
+  }
 
+  .images {
+    width: 10rem;
+    height: 11rem;
+    align-items: center;
+    display:block;
+    margin:auto;
   }
 
   .title {
@@ -163,41 +241,40 @@ body {
     padding-left: 5px;
     padding-right: 5px;
     margin-top: 0.75rem;
-    --tw-bg-opacity: 1;
-    background-color: rgba(204,251,241,var(--tw-bg-opacity));
+    background-color: rgba(204,251,241);
   }
 
 
   .shelf {
     display: flex;
-    
     align-items: flex-end;
-    
-    
+    width: 100%;
   }
   
+  .book-btn {
+    border-width: 1px;
+    text-transform: none;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 300;
+    box-shadow: 0px 0px 1px rgb(0 0 0 / 15%), 0px 0px 0px rgb(0 0 0 / 5%), 0px 0px 20px rgb(0 0 0 / 3%);
+  }
+
   button {
     margin: 0%;
-    width: 147px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    width: 100%;
+    padding: 1rem;
     border-color: transparent;
     text-align: center;
     background-color: transparent;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
-    border-width: 1px;
-    text-transform: none;
-    --tw-divide-opacity: 1;
-    border-color: rgba(229,229,229,var(--tw-divide-opacity));
-    --tw-divide-y-reverse: 0;
-    border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-    border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
-    --tw-divide-x-reverse: 0;
-    border-right-width: calc(1px * var(--tw-divide-x-reverse));
-    border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
-    cursor: pointer;
-    
+    box-sizing: border-box;
+    cursor: pointer; 
+  }
+
+  button:hover {
+     color: #999;
   }
 
  

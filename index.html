@@ -18,36 +18,43 @@
 <body>
 	
 	<div class="menu">
-		<div class="getMenu">
-			<div>
-			<button id="buttonbook" onclick="(document.getElementById('addBookMenu').style.display='block')">Добавить книгу</button>
-		</div>
+
+		<div class="getMenu" id="getMenu">
+			<div class="getMenu-content" id="getMenu-content">
+				<p class="new-book">Добавить новую книгу</p>
 			<div id="addBookMenu">
 				<div>
 			<p class="text">Название книги</p>
 			<input id="title"/>
 		</div>
 		<div>
-			<p class="text">Автор книги</p>
+			<p class="text">Автор / Авторы</p>
 			<input id="author"/>
 		</div>
+		<div class="publication-images">
 		<div>
-			<p class="text">Год издания книги</p>
+			<p class="text">Год издания</p>
 			<input id="publication"/>
 		</div>
 		<div>
 			<p class="text">Ссылка на изображение</p>
 			<input id="images"/>
 		</div>
-		<button id="save" onclick="addBook(document.getElementById('addBookMenu').style.display='none')">Сохранить</button>
+	</div>
+		<button id="save" onclick="addBook()">Добавить в список</button>
 	</div>
 </div>
-		<div class="menu-books">
-		<div class="bookshelf">Книжная полка</div>
-		<div id="container"></div>
+</div>
 
+		<div class="menu-books">
+			<div class="bookshelf-buttonbook">
+		<div class="bookshelf">Книжная полка</div>
+		<button id="buttonbook">Добавить книгу</button>
+	</div>
+		<div id="container"></div>
 	</div>
 </div>
+
 
 	<script src="script.js"></script>
 </body>
