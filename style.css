@@ -16,7 +16,7 @@ body {
 
   .getMenu {
     margin: 0% auto;
-    max-width: 1280px;
+    
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -277,5 +277,91 @@ body {
      color: #999;
   }
 
- 
-  
+  .change {
+    margin: 0% auto;
+    max-width: 1280px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.199);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  #change-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 800px;
+  }
+
+  .current-book {
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  #edit-a-book {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-change {
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: rgb(85, 84, 84);
+  }
+
+  #publicationChange {
+    width: 270px;
+  }
+
+  #imagesChange {
+    width: 450px;
+  }
+
+   
+  .publication-images-change {
+    display: flex;
+    padding-bottom: 10px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .update-cancel {
+    display: flex;
+    gap: 20px;
+    text-align: left; 
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  #updateButton {
+    background-color: rgba(13,148,136);
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+  }
+
+  #cancel{
+    background-color: rgba(13,148,136);
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+  }
+
+  #update:hover {
+    background: rgb(6, 119, 110);
+  }
+
+  #cancel:hover {
+    background: rgb(6, 119, 110);
+  }
